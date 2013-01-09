@@ -1,0 +1,9 @@
+#ifndef QTXXML_MODULE_H
+#define QTXXML_MODULE_H
+
+#include "../src/xml/xmlglobal.h"
+#include "../src/xml/xmldeserializer.h"
+#include "../src/xml/ixmldeserializerdelegate.h"
+#include "../src/xml/ixmldeserializing.h"
+
+#endif
