@@ -14,7 +14,7 @@ class IXmlDeserializerDelegate
 public:
     virtual ~IXmlDeserializerDelegate() {};
         
-    virtual IXmlDeserializing *deserializeXmlStart(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes) = 0;
+    virtual IXmlDeserializing *deserializeXmlStart(XmlDeserializer *deserializer, const QStringRef & namespaceUri, const QStringRef & name, const QXmlStreamAttributes & attributes) = 0;
     virtual void deserializeXmlEnd(XmlDeserializer *deserializer) = 0;
     virtual void deserializeXmlError(XmlDeserializer *deserializer, const QXmlStreamReader::Error error, const QString & errorString) = 0;
 };

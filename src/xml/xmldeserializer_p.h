@@ -26,7 +26,7 @@ public:
     
     QXmlStreamReader reader;
     QStack<IXmlDeserializing *> readers;
-    IXmlDeserializerDelegate* delegate;
+    IXmlDeserializerDelegate *delegate;
     
 private:
     void processStartDocument();

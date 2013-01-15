@@ -12,20 +12,20 @@ class IXmlDeserializing
 public:
     virtual ~IXmlDeserializing() {};
         
-    virtual IXmlDeserializing *deserializeXmlStartElement(XmlDeserializer * deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes)
+    virtual IXmlDeserializing *deserializeXmlStartElement(XmlDeserializer * deserializer, const QStringRef & namespaceUri, const QStringRef & name, const QXmlStreamAttributes & attributes)
     {
         Q_UNUSED(deserializer)
-        Q_UNUSED(name)
         Q_UNUSED(namespaceUri)
+        Q_UNUSED(name)
         Q_UNUSED(attributes)
         return 0;
     }
     
-    virtual void deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri)
+    virtual void deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & namespaceUri, const QStringRef & name)
     {
         Q_UNUSED(deserializer)
-        Q_UNUSED(name)
         Q_UNUSED(namespaceUri)
+        Q_UNUSED(name)
     } 
     
     virtual void deserializeXmlAttributes(XmlDeserializer *deserializer, const QXmlStreamAttributes & attributes)

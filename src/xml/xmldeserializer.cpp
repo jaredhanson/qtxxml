@@ -123,8 +123,8 @@ void XmlDeserializerPrivate::processEndDocument()
 void XmlDeserializerPrivate::processStartElement()
 {
     Q_Q(XmlDeserializer);
-    QStringRef name = reader.name();
     QStringRef namespaceUri = reader.namespaceUri();
+    QStringRef name = reader.name();
     QXmlStreamAttributes attributes = reader.attributes();
     
     IXmlDeserializing* currObj = 0;
@@ -132,13 +132,13 @@ void XmlDeserializerPrivate::processStartElement()
     
     if (readers.isEmpty()) {
         if (delegate) {
-            nextObj = delegate->deserializeXmlStart(q, name, namespaceUri, attributes);
+            nextObj = delegate->deserializeXmlStart(q, namespaceUri, name, attributes);
         }
     } else {
         currObj = readers.top();
         
         if (currObj) {
-            nextObj = currObj->deserializeXmlStartElement(q, name, namespaceUri, attributes);
+            nextObj = currObj->deserializeXmlStartElement(q, namespaceUri, name, attributes);
         }
     }
         
@@ -177,9 +177,9 @@ void XmlDeserializerPrivate::processEndElement()
     }
     
     Q_Q(XmlDeserializer);
-    QStringRef name = reader.name();
     QStringRef namespaceUri = reader.namespaceUri();
-    parentObj->deserializeXmlEndElement(q, name, namespaceUri);
+    QStringRef name = reader.name();
+    parentObj->deserializeXmlEndElement(q, namespaceUri, name);
 }
 
 void XmlDeserializerPrivate::processCharacters()
