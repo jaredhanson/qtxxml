@@ -2,7 +2,6 @@
 #define QTXXML_IXMLSERIALIZING_H
 
 #include "xmlglobal.h"
-#include <QtXml>
 #include <QtCore>
 
 QTX_BEGIN_NAMESPACE
