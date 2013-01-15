@@ -12,10 +12,33 @@ class IXmlDeserializing
 public:
     virtual ~IXmlDeserializing() {};
         
-    virtual IXmlDeserializing *deserializeXmlStartElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes) = 0;
-    virtual void deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri) = 0; 
-    virtual void deserializeXmlAttributes(XmlDeserializer *deserializer, const QXmlStreamAttributes & attributes) = 0;
-    virtual void deserializeXmlCharacters(XmlDeserializer *deserializer, const QStringRef & text) = 0;
+    virtual IXmlDeserializing *deserializeXmlStartElement(XmlDeserializer * deserializer, const QStringRef & name, const QStringRef & namespaceUri, const QXmlStreamAttributes & attributes)
+    {
+        Q_UNUSED(deserializer)
+        Q_UNUSED(name)
+        Q_UNUSED(namespaceUri)
+        Q_UNUSED(attributes)
+        return 0;
+    }
+    
+    virtual void deserializeXmlEndElement(XmlDeserializer *deserializer, const QStringRef & name, const QStringRef & namespaceUri)
+    {
+        Q_UNUSED(deserializer)
+        Q_UNUSED(name)
+        Q_UNUSED(namespaceUri)
+    } 
+    
+    virtual void deserializeXmlAttributes(XmlDeserializer *deserializer, const QXmlStreamAttributes & attributes)
+    {
+        Q_UNUSED(deserializer)
+        Q_UNUSED(attributes)
+    }
+    
+    virtual void deserializeXmlCharacters(XmlDeserializer *deserializer, const QStringRef & text)
+    {
+        Q_UNUSED(deserializer)
+        Q_UNUSED(text)
+    }
 };
 
 
