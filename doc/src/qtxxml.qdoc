@@ -1,0 +1,11 @@
+/*!
+    \module QtxXml
+    \title QtxXml
+    \brief The QtxXml module contains classes for reading and writing data in XML format.
+    
+    To include the definitions of this module's classes, use the following directive:
+    
+    \code
+        #include <QtxXml>
+    \endcode
+*/
